@@ -1,5 +1,3 @@
-import java.io.StringBufferInputStream;
-import java.util.List;
 import java.util.Objects;
 import java.util.OptionalInt;
 
@@ -19,9 +17,11 @@ public class Person {
         this.surname = surname;
         this.age = age;
     }
+
     public boolean hasAge() {
         return this.getAge().isPresent();
     }
+
     public boolean hasAddress() {
         return !this.getAddress().isBlank();
     }
@@ -29,6 +29,7 @@ public class Person {
     public String getName() {
         return name;
     }
+
     public String getSurname() {
         return surname;
     }
