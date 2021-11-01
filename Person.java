@@ -35,7 +35,11 @@ public class Person {
     }
 
     public OptionalInt getAge() {
-        return OptionalInt.of(age);
+        if (age == 0) {
+            return OptionalInt.empty();
+        } else {
+            return OptionalInt.of(age);
+        }
     }
 
     public String getAddress() {
@@ -66,10 +70,17 @@ public class Person {
 
     @Override
     public String toString() {
+        if (hasAge()) {
+            return "Person{" +
+                    "name='" + name + '\'' +
+                    ", surname='" + surname + '\'' +
+                    ", age=" + age +
+                    ", address='" + address + '\'' +
+                    '}';
+        }
         return "Person{" +
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
-                ", age=" + age +
                 ", address='" + address + '\'' +
                 '}';
     }

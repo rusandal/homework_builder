@@ -10,7 +10,7 @@ public class Main {
                 .setName("Антошка")
                 .build();
 
-        if (!mom.getAge().isPresent()) mom.happyBirthday();
+        if (mom.getAge().isPresent()) mom.happyBirthday();
         System.out.println("У " + mom + " есть сын, " + son);
 
         try {
